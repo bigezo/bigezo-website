@@ -110,15 +110,13 @@ A single-page corporate experience with semantic landmarks, sticky anchor naviga
   - Clean, product-identity cards using restrained brand palette contrast.
   - **Large centered icon** (primary visual anchor) + **vivid product name** (`Odibee Sans`).
   - Zero screenshots, zero decorative clutter, zero fabricated descriptions or guessed URLs.
-  - Verified URLs open safely (`rel="noopener noreferrer"`) or via a concise SweetAlert2 product summary modal; products without a public URL in the catalog (`Ecopharm Pharmacy CRM`) render cleanly as informational without broken links.
-- **Complete Verified Catalog Product Roster:**
+  - Verified URLs open safely (`rel="noopener noreferrer"`) or via a concise SweetAlert2 product summary modal.
+- **Selected Products Roster:**
   1. **BIGEZO** — `https://www.bigezo.com`
   2. **G-Realm** — `https://www.grealm.org`
   3. **Somero** — `https://www.somero.ug`
-  4. **RichieArt** — `https://www.richieart.co`
-  5. **Ecopharm Pharmacy CRM** — Enterprise internal system (informational card; no public URL)
-  6. **Premium Rent App** — `https://premium-rent-app.web.app`
-  7. **G-Realm Music App (Sokivibes)** — `https://sokivibes.web.app`
+  4. **Premium Rent App** — `https://premium-rent-app.web.app`
+  5. **G-Realm Music App (Sokivibes)** — `https://sokivibes.web.app`
 
 ### 4.6 Engagement Process & Project Investment (`ProcessInvestmentSectionComponent`)
 - **5 Easy Steps (`Ms Madi` + numbered timeline):**
@@ -226,7 +224,7 @@ Handles loading state, timeout, HTTP validation/server error responses, and conf
 
 1. Verified business copy and positioning from the catalog with zero junk text or unapproved illustrations.
 2. Exact color palette (`#45260B`, `#E68836`, `#FFFFFF`, `#000000`) and fonts (`Odibee Sans`, `Ms Madi`, `Outfit`).
-3. **Our Products** section in optimal visual hierarchy showing all 7 catalog products as clean cards with a large centered icon and vivid product name.
+3. **Our Products** section in optimal visual hierarchy showing the 5 selected products (`BIGEZO`, `G-Realm`, `Somero`, `Premium Rent App`, `G-Realm Music App (Sokivibes)`) as clean cards with a large centered icon and vivid product name.
 4. Every Angular component uses separate `.ts`, `.html`, and `.scss` files adhering to SOLID principles.
 5. Tailwind CSS, Font Awesome Free, and SweetAlert2 integrated with no Bootstrap.
 6. Contact form validates rigorously, uses an isolated API gateway ready for future backend URL configuration, and never fakes server delivery when unconnected.

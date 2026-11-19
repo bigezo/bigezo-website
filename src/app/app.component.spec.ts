@@ -33,6 +33,8 @@ describe('App & HomePage', () => {
       'Advanced Digital Systems & Custom Software Solutions'
     );
     expect(compiled.querySelector('#products')?.textContent).toContain('Our Products');
-    expect(compiled.querySelector('#products')?.textContent).toContain('Ecopharm Pharmacy CRM');
+    expect(compiled.querySelector('#products')?.textContent).toContain('Somero');
+    expect(compiled.querySelector('#products')?.textContent).not.toContain('Ecopharm Pharmacy CRM');
+    expect(compiled.querySelector('#products')?.textContent).not.toContain('RichieArt');
   });
 });

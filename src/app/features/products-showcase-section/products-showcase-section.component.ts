@@ -1,5 +1,5 @@
 import { Component, inject, output } from '@angular/core';
-import { DIGITAL_PRODUCTS } from '../../core/data/bigezo-catalog.data';
+import { OUR_PRODUCTS } from '../../core/data/bigezo-catalog.data';
 import { ProductItem } from '../../core/models/catalog.models';
 import { NotificationService } from '../../core/services/notification.service';
 import { ProductCardComponent } from '../../shared/components/product-card/product-card.component';
@@ -15,7 +15,7 @@ import { SectionHeadingComponent } from '../../shared/components/section-heading
 export class ProductsShowcaseSectionComponent {
   private readonly notificationService = inject(NotificationService);
 
-  readonly products = DIGITAL_PRODUCTS;
+  readonly products = OUR_PRODUCTS;
   readonly inquireAboutProduct = output<string>();
 
   handleProductSelect(product: ProductItem): void {

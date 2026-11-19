@@ -87,7 +87,7 @@ export const EXPERTISE_ITEMS: readonly ExpertiseItem[] = [
   },
 ];
 
-export const DIGITAL_PRODUCTS: readonly ProductItem[] = [
+export const OUR_PRODUCTS: readonly ProductItem[] = [
   {
     id: 'bigezo',
     name: 'BIGEZO',
@@ -113,20 +113,6 @@ export const DIGITAL_PRODUCTS: readonly ProductItem[] = [
     category: 'Digital Product',
   },
   {
-    id: 'richieart',
-    name: 'RichieArt',
-    iconClass: 'fa-solid fa-palette',
-    url: 'https://www.richieart.co',
-    displayUrl: 'www.richieart.co',
-    category: 'Digital Product',
-  },
-  {
-    id: 'ecopharm-crm',
-    name: 'Ecopharm Pharmacy CRM',
-    iconClass: 'fa-solid fa-notes-medical',
-    category: 'Enterprise CRM System',
-  },
-  {
     id: 'premium-rent-app',
     name: 'Premium Rent App',
     iconClass: 'fa-solid fa-building',
@@ -142,6 +128,25 @@ export const DIGITAL_PRODUCTS: readonly ProductItem[] = [
     displayUrl: 'sokivibes.web.app',
     category: 'Digital Application',
   },
+];
+
+export const DIGITAL_PRODUCTS: readonly ProductItem[] = [
+  ...OUR_PRODUCTS.slice(0, 3),
+  {
+    id: 'richieart',
+    name: 'RichieArt',
+    iconClass: 'fa-solid fa-palette',
+    url: 'https://www.richieart.co',
+    displayUrl: 'www.richieart.co',
+    category: 'Digital Product',
+  },
+  {
+    id: 'ecopharm-crm',
+    name: 'Ecopharm Pharmacy CRM',
+    iconClass: 'fa-solid fa-notes-medical',
+    category: 'Enterprise CRM System',
+  },
+  ...OUR_PRODUCTS.slice(3),
 ];
 
 export const PROCESS_STEPS: readonly ProcessStep[] = [
