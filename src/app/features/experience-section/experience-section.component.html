@@ -1,0 +1,124 @@
+<section id="experience" class="bg-white text-black">
+  <!-- Why Us Header Band -->
+  <div class="bg-[#45260B] py-12 text-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+        <bigezo-section-heading
+          scriptTitle="Why Us?"
+          headingTitle="Proven Technical Experience"
+          tone="dark"
+        />
+        <div class="bg-[#E68836] px-6 py-3 text-center">
+          <p class="font-heading text-2xl sm:text-3xl tracking-wider text-black">
+            12+ Years Experience &nbsp;|&nbsp; 30+ Applications Built
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio & Leadership Experience -->
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="grid gap-8 lg:grid-cols-2 lg:gap-10">
+      <div class="min-w-0 border-2 border-[#45260B]/15 p-5 sm:p-8">
+        <h3 class="font-heading text-2xl sm:text-3xl uppercase tracking-wide text-[#E68836]">
+          Selected Websites Designed
+        </h3>
+        <ul class="mt-5 space-y-3">
+          @for (site of websites; track site.url) {
+            <li class="min-w-0">
+              <a
+                [href]="site.url"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="font-body inline-flex max-w-full flex-wrap items-center gap-2 text-sm sm:text-base font-medium text-black break-all sm:break-words transition-colors hover:text-[#E68836]"
+              >
+                <i class="fa-solid fa-square shrink-0 text-[8px] text-[#E68836]" aria-hidden="true"></i>
+                <span>{{ site.label }}</span>
+                <i
+                  class="fa-solid fa-arrow-up-right-from-square shrink-0 text-xs text-[#45260B]/50"
+                  aria-hidden="true"
+                ></i>
+              </a>
+            </li>
+          }
+        </ul>
+      </div>
+
+      <div class="min-w-0 border-2 border-[#45260B]/15 p-5 sm:p-8">
+        <h3 class="font-heading text-2xl sm:text-3xl uppercase tracking-wide text-[#E68836]">
+          Advanced Apps / Digital Products
+        </h3>
+        <ul class="mt-5 space-y-3">
+          @for (item of digitalProducts; track item.id) {
+            <li class="font-body flex min-w-0 items-start gap-2.5 text-sm sm:text-base font-medium text-black">
+              <i class="fa-solid fa-square mt-2 shrink-0 text-[8px] text-[#E68836]" aria-hidden="true"></i>
+              @if (item.url) {
+                <a
+                  [href]="item.url"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex min-w-0 max-w-full flex-wrap items-center gap-x-2 gap-y-0.5 text-black break-words transition-colors hover:text-[#E68836]"
+                >
+                  <span>{{ item.name }}</span>
+                  <span class="break-all text-xs sm:text-sm text-[#45260B]/70">({{ item.displayUrl }})</span>
+                  <i
+                    class="fa-solid fa-arrow-up-right-from-square shrink-0 text-xs text-[#45260B]/50"
+                    aria-hidden="true"
+                  ></i>
+                </a>
+              } @else {
+                <span>{{ item.name }}</span>
+              }
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+
+    <!-- Corporate & Institutional Experience of Technical Leadership -->
+    <div class="mt-10 border-2 border-[#45260B] bg-[#45260B] p-6 sm:p-8 text-center text-white">
+      <h3 class="font-heading text-xl sm:text-2xl uppercase tracking-widest text-[#E68836]">
+        Corporate &amp; Institutional Experience of Our Technical Leadership
+      </h3>
+      <div class="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+        @for (org of leadershipOrgs; track org; let last = $last) {
+          <span class="font-body text-base sm:text-lg font-medium text-white">{{ org }}</span>
+          @if (!last) {
+            <span class="text-[#E68836]" aria-hidden="true">|</span>
+          }
+        }
+      </div>
+    </div>
+
+    <!-- Engineered For Your Business -->
+    <div class="mt-16">
+      <div class="mb-8 bg-[#45260B] px-6 py-4">
+        <h3 class="font-heading text-2xl sm:text-3xl uppercase tracking-wider text-white">
+          Engineered For Your Business
+        </h3>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2">
+        @for (pillar of engineeringPillars; track pillar.id) {
+          <article class="flex min-w-0 items-start gap-4 border-l-4 border-[#E68836] bg-white p-5 shadow-sm ring-1 ring-[#45260B]/10">
+            <div
+              class="flex h-11 w-11 shrink-0 items-center justify-center bg-[#45260B] text-[#E68836]"
+              aria-hidden="true"
+            >
+              <i [class]="pillar.iconClass + ' text-lg'"></i>
+            </div>
+            <div class="min-w-0">
+              <h4 class="font-body text-base font-bold text-[#E68836]">
+                {{ pillar.title }}
+              </h4>
+              <p class="font-body mt-1 text-sm sm:text-base leading-relaxed text-black">
+                {{ pillar.description }}
+              </p>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </div>
+</section>

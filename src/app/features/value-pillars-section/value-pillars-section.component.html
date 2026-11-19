@@ -1,0 +1,25 @@
+<section id="services" class="bg-white py-16 sm:py-20 text-black">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <bigezo-section-heading scriptTitle="Where we add Value"
+      headingTitle="Custom Software Solutions For Serious Business Needs" tone="light" />
+
+    <div class="mt-12 grid gap-6 md:grid-cols-2">
+      @for (pillar of pillars; track pillar.id) {
+      <article
+        class="flex min-w-0 items-start gap-4 border-2 border-[#45260B]/15 bg-white p-5 sm:gap-5 sm:p-6 transition-colors duration-200 hover:border-[#E68836]">
+        <div class="flex h-12 w-12 shrink-0 items-center justify-center bg-[#E68836] text-[#45260B]" aria-hidden="true">
+          <i [class]="pillar.iconClass + ' text-xl'"></i>
+        </div>
+            <div class="min-w-0">
+              <h3 class="font-heading break-words text-2xl uppercase tracking-wide text-[#E68836]">
+                {{ pillar.title }}
+              </h3>
+              <p class="font-body mt-1.5 text-base leading-relaxed text-black">
+                {{ pillar.description }}
+              </p>
+            </div>
+      </article>
+      }
+    </div>
+  </div>
+</section>

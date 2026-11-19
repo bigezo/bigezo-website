@@ -1,0 +1,74 @@
+@use '@fortawesome/fontawesome-free/css/all.min.css';
+
+@layer base {
+  html,
+  body {
+    overflow-x: clip;
+    max-width: 100%;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Outfit', sans-serif;
+    color: #000000;
+    background-color: #ffffff;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  h1,
+  h2,
+  .font-heading {
+    font-family: 'Odibee Sans', sans-serif;
+    letter-spacing: 0.03em;
+  }
+
+  .font-script {
+    font-family: 'Ms Madi', cursive;
+  }
+
+  .font-body {
+    font-family: 'Outfit', sans-serif;
+  }
+
+  :focus-visible {
+    outline: 2px solid #e68836;
+    outline-offset: 2px;
+  }
+}
+
+/* SweetAlert2 Brand Overrides */
+.bigezo-swal-popup {
+  border-radius: 0 !important;
+  border-top: 4px solid #e68836 !important;
+  font-family: 'Outfit', sans-serif !important;
+}
+
+.bigezo-swal-title {
+  font-family: 'Odibee Sans', sans-serif !important;
+  letter-spacing: 0.04em !important;
+  color: #45260b !important;
+  font-size: 2rem !important;
+}
+
+.bigezo-swal-confirm,
+.bigezo-swal-cancel {
+  border-radius: 0 !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  padding: 0.65rem 1.4rem !important;
+}

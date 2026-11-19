@@ -1,0 +1,36 @@
+<div
+  class="min-w-0 space-y-2"
+  [class.text-center]="align() === 'center'"
+  [class.mx-auto]="align() === 'center'"
+  [class.max-w-3xl]="align() === 'center'"
+>
+  @if (headingTitle()) {
+    <p
+      class="font-heading break-words text-sm sm:text-base uppercase tracking-[0.18em] font-normal"
+      [class.text-[#E68836]]="tone() === 'dark'"
+      [class.text-[#45260B]]="tone() === 'light'"
+    >
+      {{ headingTitle() }}
+    </p>
+  }
+
+  @if (scriptTitle()) {
+    <h2
+      class="font-script break-words text-4xl sm:text-5xl md:text-6xl leading-[1.05] font-normal"
+      [class.text-[#E68836]]="tone() === 'dark'"
+      [class.text-[#45260B]]="tone() === 'light'"
+    >
+      {{ scriptTitle() }}
+    </h2>
+  }
+
+  @if (subtitle()) {
+    <p
+      class="font-body text-base sm:text-lg leading-relaxed pt-2"
+      [class.text-white/90]="tone() === 'dark'"
+      [class.text-black/80]="tone() === 'light'"
+    >
+      {{ subtitle() }}
+    </p>
+  }
+</div>

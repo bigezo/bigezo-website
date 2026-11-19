@@ -1,0 +1,15 @@
+  <div id="top" class="flex min-h-screen flex-col overflow-x-clip bg-white text-black">
+    <bigezo-site-header />
+
+    <main class="flex-1">
+      <bigezo-hero-section />
+      <bigezo-value-pillars-section />
+      <bigezo-expertise-section />
+      <bigezo-products-showcase-section (inquireAboutProduct)="handleProductInquiry($event)" />
+      <bigezo-process-investment-section />
+      <bigezo-experience-section />
+      <bigezo-contact-section [prefilledTopic]="selectedProductTopic()" />
+    </main>
+
+    <bigezo-site-footer />
+  </div>

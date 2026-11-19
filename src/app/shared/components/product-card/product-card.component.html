@@ -1,0 +1,30 @@
+<button
+  type="button"
+  (click)="onSelect()"
+  class="product-card group relative flex h-full w-full min-w-0 flex-col items-center justify-center border-2 border-[#45260B]/15 bg-white px-6 py-10 text-center transition-colors duration-200 hover:border-[#E68836] hover:bg-[#45260B] focus-visible:border-[#E68836]"
+  [attr.aria-label]="'View details for ' + product().name"
+>
+  <span
+    class="absolute top-3 right-3 text-xs text-[#45260B]/40 transition-colors duration-200 group-hover:text-[#E68836]"
+    aria-hidden="true"
+  >
+    @if (product().url) {
+      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    } @else {
+      <i class="fa-solid fa-circle-info"></i>
+    }
+  </span>
+
+  <div
+    class="mb-6 flex h-24 w-24 items-center justify-center bg-[#45260B] text-[#E68836] transition-colors duration-200 group-hover:bg-[#E68836] group-hover:text-[#45260B]"
+    aria-hidden="true"
+  >
+    <i [class]="product().iconClass + ' text-5xl'"></i>
+  </div>
+
+  <h3
+    class="font-heading text-3xl sm:text-4xl uppercase tracking-wide text-[#45260B] transition-colors duration-200 group-hover:text-[#E68836]"
+  >
+    {{ product().name }}
+  </h3>
+</button>

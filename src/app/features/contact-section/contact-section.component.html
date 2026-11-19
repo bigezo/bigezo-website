@@ -1,0 +1,281 @@
+<section id="contact" class="border-t border-[#45260B]/15 bg-white py-16 sm:py-20 text-black">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div
+      class="grid gap-10 lg:gap-12"
+      [class.lg:grid-cols-12]="showContactForm()"
+      [class.mx-auto]="!showContactForm()"
+      [class.max-w-4xl]="!showContactForm()"
+    >
+      <!-- Executive Contact Details & Clickable Channels -->
+      <div
+        class="min-w-0 space-y-6"
+        [class.lg:col-span-5]="showContactForm()"
+        [class.text-center]="!showContactForm()"
+      >
+        <bigezo-section-heading
+          headingTitle="Contact Us Today"
+          scriptTitle="Tell us what you want to build."
+          subtitle="We'll help you understand the requirements, recommend the right approach and provide a clear quotation."
+          tone="light"
+          [align]="showContactForm() ? 'left' : 'center'"
+        />
+
+        @if (prefilledTopic()) {
+          <p class="font-body inline-block border border-[#E68836] bg-[#E68836]/10 px-4 py-2 text-sm font-medium text-[#45260B]">
+            Selected Topic: <span class="font-semibold">{{ prefilledTopic() }}</span>
+          </p>
+        }
+
+        <div
+          class="grid gap-4 pt-2"
+          [class.sm:grid-cols-2]="!showContactForm()"
+        >
+          <!-- Clickable WhatsApp Action -->
+          <a
+            [href]="whatsappUrl()"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex min-w-0 cursor-pointer items-center justify-between gap-4 border-2 border-[#45260B] bg-[#45260B] p-5 text-left text-white transition-colors hover:border-[#E68836] hover:bg-black"
+          >
+            <div class="flex min-w-0 items-center gap-4">
+              <span
+                class="flex h-12 w-12 shrink-0 items-center justify-center bg-[#E68836] text-[#45260B]"
+                aria-hidden="true"
+              >
+                <i class="fa-brands fa-whatsapp text-2xl"></i>
+              </span>
+              <div class="min-w-0">
+                <span class="font-heading block text-sm tracking-widest text-[#E68836] uppercase">
+                  WhatsApp Chat
+                </span>
+                <span class="font-body block truncate text-lg font-semibold text-white">
+                  {{ companyPhone }}
+                </span>
+                <span class="font-body mt-0.5 inline-flex items-center gap-1.5 text-xs font-medium text-[#E68836] group-hover:underline">
+                  <span>Message us on WhatsApp</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square text-[10px]" aria-hidden="true"></i>
+                </span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Clickable Email Action -->
+          <a
+            [href]="emailUrl()"
+            class="group flex min-w-0 cursor-pointer items-center justify-between gap-4 border-2 border-[#45260B] bg-white p-5 text-left text-black transition-colors hover:border-[#E68836] hover:bg-[#45260B]/5"
+          >
+            <div class="flex min-w-0 items-center gap-4">
+              <span
+                class="flex h-12 w-12 shrink-0 items-center justify-center bg-[#45260B] text-[#E68836]"
+                aria-hidden="true"
+              >
+                <i class="fa-solid fa-envelope text-xl"></i>
+              </span>
+              <div class="min-w-0">
+                <span class="font-heading block text-sm tracking-widest text-[#45260B] uppercase">
+                  Direct Executive Email
+                </span>
+                <span class="font-body block truncate text-lg font-semibold text-black">
+                  {{ companyEmail }}
+                </span>
+                <span class="font-body mt-0.5 inline-flex items-center gap-1.5 text-xs font-medium text-[#45260B] group-hover:text-[#E68836] group-hover:underline">
+                  <span>Send an email</span>
+                  <i class="fa-solid fa-arrow-right text-[10px]" aria-hidden="true"></i>
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div [class.pt-2]="!showContactForm()">
+          <a
+            [href]="telUrl"
+            class="font-body inline-flex items-center gap-2 text-sm font-semibold text-[#45260B] underline decoration-[#E68836] underline-offset-4 transition-colors hover:text-[#E68836]"
+          >
+            <i class="fa-solid fa-phone text-xs text-[#E68836]" aria-hidden="true"></i>
+            <span>Call directly: {{ companyPhone }}</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Structured Project Inquiry Form (Displayed once Backend API URL is configured) -->
+      @if (showContactForm()) {
+        <div class="min-w-0 border-2 border-[#45260B] bg-white p-6 sm:p-8 lg:col-span-7">
+          <h3 class="font-heading text-2xl sm:text-3xl uppercase tracking-wide text-[#45260B]">
+            Project Assessment &amp; Quotation Request
+          </h3>
+
+          <form [formGroup]="inquiryForm" (ngSubmit)="onSubmit()" novalidate class="mt-6 space-y-5">
+            <div class="grid gap-5 sm:grid-cols-2">
+              <div>
+                <label for="fullName" class="font-body block text-sm font-semibold text-[#45260B]">
+                  Full Name <span class="text-[#E68836]">*</span>
+                </label>
+                <input
+                  id="fullName"
+                  type="text"
+                  formControlName="fullName"
+                  autocomplete="name"
+                  class="font-body mt-1.5 w-full border border-[#45260B]/30 bg-white px-3.5 py-2.5 text-sm text-black focus:border-[#E68836] focus:outline-none"
+                  placeholder="Your full name"
+                />
+                @if (hasFieldError('fullName')) {
+                  <p class="font-body mt-1 text-xs text-[#45260B]">Please enter your full name.</p>
+                }
+              </div>
+
+              <div>
+                <label
+                  for="organization"
+                  class="font-body block text-sm font-semibold text-[#45260B]"
+                >
+                  Company / Organization
+                </label>
+                <input
+                  id="organization"
+                  type="text"
+                  formControlName="organization"
+                  autocomplete="organization"
+                  class="font-body mt-1.5 w-full border border-[#45260B]/30 bg-white px-3.5 py-2.5 text-sm text-black focus:border-[#E68836] focus:outline-none"
+                  placeholder="Organization name (optional)"
+                />
+              </div>
+            </div>
+
+            <div class="grid gap-5 sm:grid-cols-2">
+              <div>
+                <label for="email" class="font-body block text-sm font-semibold text-[#45260B]">
+                  Business Email <span class="text-[#E68836]">*</span>
+                </label>
+                <input
+                  id="email"
+                  type="email"
+                  formControlName="email"
+                  autocomplete="email"
+                  class="font-body mt-1.5 w-full border border-[#45260B]/30 bg-white px-3.5 py-2.5 text-sm text-black focus:border-[#E68836] focus:outline-none"
+                  placeholder="name@company.com"
+                />
+                @if (hasFieldError('email')) {
+                  <p class="font-body mt-1 text-xs text-[#45260B]">
+                    Please enter a valid email address.
+                  </p>
+                }
+              </div>
+
+              <div>
+                <label for="phone" class="font-body block text-sm font-semibold text-[#45260B]">
+                  Phone / WhatsApp <span class="text-[#E68836]">*</span>
+                </label>
+                <input
+                  id="phone"
+                  type="tel"
+                  formControlName="phone"
+                  autocomplete="tel"
+                  class="font-body mt-1.5 w-full border border-[#45260B]/30 bg-white px-3.5 py-2.5 text-sm text-black focus:border-[#E68836] focus:outline-none"
+                  placeholder="+256 7XX XXX XXX"
+                />
+                @if (hasFieldError('phone')) {
+                  <p class="font-body mt-1 text-xs text-[#45260B]">
+                    Please enter a valid phone or WhatsApp number.
+                  </p>
+                }
+              </div>
+            </div>
+
+            <div class="grid gap-5 sm:grid-cols-2">
+              <div>
+                <label
+                  for="serviceCategory"
+                  class="font-body block text-sm font-semibold text-[#45260B]"
+                >
+                  Project Type <span class="text-[#E68836]">*</span>
+                </label>
+                <select
+                  id="serviceCategory"
+                  formControlName="serviceCategory"
+                  class="font-body mt-1.5 w-full border border-[#45260B]/30 bg-white px-3.5 py-2.5 text-sm text-black focus:border-[#E68836] focus:outline-none"
+                >
+                  @for (category of serviceCategories; track category) {
+                    <option [value]="category">{{ category }}</option>
+                  }
+                </select>
+              </div>
+
+              <div>
+                <label
+                  for="budgetRange"
+                  class="font-body block text-sm font-semibold text-[#45260B]"
+                >
+                  Estimated Investment Range <span class="text-[#E68836]">*</span>
+                </label>
+                <select
+                  id="budgetRange"
+                  formControlName="budgetRange"
+                  class="font-body mt-1.5 w-full border border-[#45260B]/30 bg-white px-3.5 py-2.5 text-sm text-black focus:border-[#E68836] focus:outline-none"
+                >
+                  @for (range of budgetRanges; track range) {
+                    <option [value]="range">{{ range }}</option>
+                  }
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label
+                for="projectDetails"
+                class="font-body block text-sm font-semibold text-[#45260B]"
+              >
+                Project Summary &amp; Business Requirements <span class="text-[#E68836]">*</span>
+              </label>
+              <textarea
+                id="projectDetails"
+                rows="4"
+                formControlName="projectDetails"
+                class="font-body mt-1.5 w-full border border-[#45260B]/30 bg-white px-3.5 py-2.5 text-sm text-black focus:border-[#E68836] focus:outline-none"
+                placeholder="Outline your operational workflow, target users, required integrations, and desired timeline..."
+              ></textarea>
+              @if (hasFieldError('projectDetails')) {
+                <p class="font-body mt-1 text-xs text-[#45260B]">
+                  Please provide at least 20 characters describing your project requirements.
+                </p>
+              }
+            </div>
+
+            <div>
+              <label class="flex cursor-pointer items-start gap-3">
+                <input
+                  type="checkbox"
+                  formControlName="consent"
+                  class="mt-1 h-4 w-4 accent-[#E68836]"
+                />
+                <span class="font-body text-xs sm:text-sm text-black/80">
+                  I confirm these project details may be reviewed by Bigezo Technologies solely for
+                  technical assessment and preparing a quotation.
+                </span>
+              </label>
+              @if (hasFieldError('consent')) {
+                <p class="font-body mt-1 text-xs text-[#45260B]">
+                  Consent is required to submit your brief.
+                </p>
+              }
+            </div>
+
+            <button
+              type="submit"
+              [disabled]="submitting()"
+              class="font-heading inline-flex w-full items-center justify-center gap-3 bg-[#E68836] px-6 py-3.5 text-xl tracking-wider text-black transition-colors hover:bg-[#45260B] hover:text-white disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+            >
+              @if (submitting()) {
+                <i class="fa-solid fa-spinner fa-spin text-base" aria-hidden="true"></i>
+                <span>Submitting Request...</span>
+              } @else {
+                <span>Submit Project Inquiry</span>
+                <i class="fa-solid fa-paper-plane text-sm" aria-hidden="true"></i>
+              }
+            </button>
+          </form>
+        </div>
+      }
+    </div>
+  </div>
+</section>
