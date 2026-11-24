@@ -1,11 +1,11 @@
 <button
   type="button"
   (click)="onSelect()"
-  class="product-card group relative flex h-full w-full min-w-0 flex-col items-center justify-center border-2 border-[#45260B]/15 bg-white px-6 py-10 text-center transition-colors duration-200 hover:border-[#E68836] hover:bg-[#45260B] focus-visible:border-[#E68836]"
+  class="product-card bigezo-glass-card group relative flex h-full w-full min-w-0 cursor-pointer flex-col items-center justify-center px-6 py-9 text-center transition-all duration-200 hover:-translate-y-1 hover:border-[#F69139]/60 focus-visible:border-[#F69139]"
   [attr.aria-label]="'View details for ' + product().name"
 >
   <span
-    class="absolute top-3 right-3 text-xs text-[#45260B]/40 transition-colors duration-200 group-hover:text-[#E68836]"
+    class="absolute top-3.5 right-3.5 text-xs text-[#A6B4C8] transition-colors duration-200 group-hover:text-[#FFA954]"
     aria-hidden="true"
   >
     @if (product().url) {
@@ -16,14 +16,14 @@
   </span>
 
   <div
-    class="mb-6 flex h-24 w-24 items-center justify-center bg-[#45260B] text-[#E68836] transition-colors duration-200 group-hover:bg-[#E68836] group-hover:text-[#45260B]"
+    class="mb-5 flex h-20 w-20 items-center justify-center rounded-2xl bg-[#E48735]/15 text-[#FFA954] transition-all duration-200 group-hover:bg-gradient-to-br group-hover:from-[#F69139] group-hover:to-[#C76B1B] group-hover:text-white group-hover:shadow-lg group-hover:shadow-[#E48735]/30"
     aria-hidden="true"
   >
-    <i [class]="product().iconClass + ' text-5xl'"></i>
+    <i [class]="product().iconClass + ' text-4xl'"></i>
   </div>
 
   <h3
-    class="font-heading text-3xl sm:text-4xl uppercase tracking-wide text-[#45260B] transition-colors duration-200 group-hover:text-[#E68836]"
+    class="font-heading text-2xl font-bold tracking-tight text-white transition-colors duration-200 group-hover:text-[#FFA954] sm:text-3xl"
   >
     {{ product().name }}
   </h3>

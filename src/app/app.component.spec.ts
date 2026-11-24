@@ -30,11 +30,17 @@ describe('App & HomePage', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Advanced Digital Systems & Custom Software Solutions'
+      'Advanced Custom Software Solutions'
     );
     expect(compiled.querySelector('#products')?.textContent).toContain('Our Products');
     expect(compiled.querySelector('#products')?.textContent).toContain('Somero');
     expect(compiled.querySelector('#products')?.textContent).not.toContain('Ecopharm Pharmacy CRM');
     expect(compiled.querySelector('#products')?.textContent).not.toContain('RichieArt');
+    expect(compiled.querySelector('#experience')?.textContent).toContain(
+      'Advanced Apps / Digital Products'
+    );
+    expect(compiled.querySelector('#experience')?.textContent).not.toContain(
+      'Selected Websites Designed'
+    );
   });
 });

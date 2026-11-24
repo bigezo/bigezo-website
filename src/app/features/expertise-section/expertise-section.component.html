@@ -1,4 +1,4 @@
-<section id="expertise" class="bg-[#45260B] py-16 sm:py-20 text-white">
+<section id="expertise" class="border-b border-white/10 bg-[#0F141D]/55 py-14 text-white sm:py-20">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <bigezo-section-heading
       scriptTitle="Our Expertise"
@@ -6,25 +6,23 @@
       tone="dark"
     />
 
-    <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <div class="mt-10 grid gap-5 sm:mt-12 md:grid-cols-2 lg:grid-cols-3">
       @for (item of expertiseItems; track item.id) {
-        <article
-          class="flex min-w-0 flex-col justify-between border border-white/15 bg-black/25 p-5 sm:p-6 transition-colors duration-200 hover:border-[#E68836]"
-        >
+        <article class="bigezo-glass-card flex min-w-0 flex-col justify-between p-5 transition-transform duration-200 hover:-translate-y-0.5 sm:p-6">
           <div class="min-w-0">
-            <div class="mb-4 flex items-center gap-3">
+            <div class="mb-4 flex items-center justify-between">
               <span
-                class="flex h-10 w-10 shrink-0 items-center justify-center bg-[#E68836] text-[#45260B]"
+                class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#E48735]/15 text-[#FFA954]"
                 aria-hidden="true"
               >
                 <i [class]="item.iconClass + ' text-lg'"></i>
               </span>
-              <i class="fa-solid fa-chevron-right text-xs text-[#E68836]" aria-hidden="true"></i>
+              <i class="fa-solid fa-chevron-right text-xs text-[#FFA954]/60" aria-hidden="true"></i>
             </div>
-            <h3 class="font-heading break-words text-2xl uppercase tracking-wide text-[#E68836]">
+            <h3 class="font-heading break-words text-xl font-bold tracking-tight text-white sm:text-2xl">
               {{ item.title }}
             </h3>
-            <p class="font-body mt-2 text-base leading-relaxed text-white/90">
+            <p class="font-body mt-2 text-sm leading-relaxed text-[#D4DEEC] sm:text-base">
               {{ item.description }}
             </p>
           </div>

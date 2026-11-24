@@ -3,7 +3,6 @@ import {
   DIGITAL_PRODUCTS,
   ENGINEERING_PILLARS,
   LEADERSHIP_ORGANISATIONS,
-  SELECTED_WEBSITES,
 } from '../../core/data/bigezo-catalog.data';
 import { SectionHeadingComponent } from '../../shared/components/section-heading/section-heading.component';
 
@@ -15,7 +14,6 @@ import { SectionHeadingComponent } from '../../shared/components/section-heading
   styleUrl: './experience-section.component.scss',
 })
 export class ExperienceSectionComponent {
-  readonly websites = SELECTED_WEBSITES;
   readonly digitalProducts = DIGITAL_PRODUCTS;
   readonly leadershipOrgs = LEADERSHIP_ORGANISATIONS;
   readonly engineeringPillars = ENGINEERING_PILLARS;

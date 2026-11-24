@@ -136,14 +136,14 @@ A single-page corporate experience with semantic landmarks, sticky anchor naviga
 - **Corporate & Institutional Experience of Our Technical Leadership:**
   - `World Vision Uganda`, `Vivo Energy`, `Monitor Publications Ltd`, `Ecopharm Pharmacy`, `MK Publishers`
   - *Content Accuracy Rule:* Phrased strictly as *"Corporate & Institutional Experience of Our Technical Leadership"* per the catalog—never misrepresented as client endorsements.
-- **Selected Websites Designed (Verified URLs):**
-  - `www.footnoteconsults.com`
-  - `www.peaceofmindpackage.com`
-  - `www.civitas.co.ug`
-  - `www.jalivingspaces.com`
-  - `www.kidsclubkampalaug.com`
-  - `www.mtotowafrikauganda.org`
-  - `www.albanislamic.org`
+- **Advanced Apps / Digital Products (Verified Roster):**
+  - `BIGEZO` (`www.bigezo.com`)
+  - `G-Realm` (`www.grealm.org`)
+  - `Somero` (`www.somero.ug`)
+  - `RichieArt` (`www.richieart.co`)
+  - `Ecopharm Pharmacy CRM`
+  - `Premium Rent App` (`premium-rent-app.web.app`)
+  - `G-Realm Music App (Sokivibes)` (`sokivibes.web.app`)
 
 ### 4.8 Engineered For Your Business (`EngineeringSectionComponent`)
 Four crisp engineering commitment cards:

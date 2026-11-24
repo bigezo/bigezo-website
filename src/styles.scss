@@ -9,9 +9,20 @@
 
   html {
     scroll-behavior: smooth;
-    font-family: 'Outfit', sans-serif;
-    color: #000000;
-    background-color: #ffffff;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #ffffff;
+    background-color: #080b10;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background-color: #080b10;
+    background-image:
+      radial-gradient(circle at 15% 10%, rgba(228, 135, 53, 0.14), transparent 38%),
+      radial-gradient(circle at 85% 45%, rgba(246, 145, 57, 0.08), transparent 42%),
+      linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -30,45 +41,137 @@
 
   h1,
   h2,
+  h3,
   .font-heading {
-    font-family: 'Odibee Sans', sans-serif;
-    letter-spacing: 0.03em;
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.02em;
   }
 
   .font-script {
-    font-family: 'Ms Madi', cursive;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .font-mono-tech {
+    font-family: 'JetBrains Mono', monospace;
   }
 
   .font-body {
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
 
   :focus-visible {
-    outline: 2px solid #e68836;
+    outline: 2px solid #f69139;
     outline-offset: 2px;
   }
 }
 
+/* Bigezo Dark Tech Console Primitives */
+.bigezo-glass-card {
+  position: relative;
+  background: rgba(15, 22, 34, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(228, 135, 53, 0.06) inset;
+  backdrop-filter: blur(16px);
+}
+
+.bigezo-glass-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px 22% auto 22%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #f69139, transparent);
+  pointer-events: none;
+}
+
+.bigezo-tile {
+  background: rgba(255, 255, 255, 0.03);
+  border: none;
+  border-radius: 14px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.bigezo-tile:hover {
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-2px);
+}
+
+.bigezo-btn-primary {
+  background: linear-gradient(135deg, #f69139, #c76b1b);
+  color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(228, 135, 53, 0.28);
+  transition: filter 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.bigezo-btn-primary:hover {
+  filter: brightness(1.07);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(228, 135, 53, 0.38);
+}
+
+.bigezo-btn-secondary {
+  background: rgba(255, 255, 255, 0.04);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 10px;
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.15s ease;
+}
+
+.bigezo-btn-secondary:hover {
+  border-color: rgba(246, 145, 57, 0.55);
+  background: rgba(228, 135, 53, 0.12);
+  color: #ffa954;
+  transform: translateY(-1px);
+}
+
+.bigezo-gradient-text {
+  background: linear-gradient(135deg, #ffa954, #e48735);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes bigezoPulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(0.85);
+  }
+}
+
+.bigezo-pulse-dot {
+  animation: bigezoPulse 2.4s infinite ease-in-out;
+  box-shadow: 0 0 12px #f69139;
+}
+
 /* SweetAlert2 Brand Overrides */
 .bigezo-swal-popup {
-  border-radius: 0 !important;
-  border-top: 4px solid #e68836 !important;
-  font-family: 'Outfit', sans-serif !important;
+  border-radius: 16px !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-top: 3px solid #f69139 !important;
+  font-family: 'Inter', sans-serif !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65) !important;
 }
 
 .bigezo-swal-title {
-  font-family: 'Odibee Sans', sans-serif !important;
-  letter-spacing: 0.04em !important;
-  color: #45260b !important;
-  font-size: 2rem !important;
+  font-family: 'Space Grotesk', sans-serif !important;
+  letter-spacing: -0.02em !important;
+  color: #ffffff !important;
+  font-size: 1.65rem !important;
 }
 
 .bigezo-swal-confirm,
 .bigezo-swal-cancel {
-  border-radius: 0 !important;
-  font-family: 'Outfit', sans-serif !important;
+  border-radius: 10px !important;
+  font-family: 'Inter', sans-serif !important;
   font-weight: 600 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.06em !important;
-  padding: 0.65rem 1.4rem !important;
+  letter-spacing: 0.02em !important;
+  padding: 0.7rem 1.4rem !important;
 }

@@ -1,52 +1,54 @@
-<section id="process" class="bg-white py-16 sm:py-20 text-black">
+<section id="process" class="border-b border-white/10 bg-[#0F141D]/55 py-14 text-white sm:py-20">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
       <div class="min-w-0 space-y-8 lg:col-span-6">
-        <div class="flex items-baseline gap-3 sm:gap-4">
-          <span class="font-heading shrink-0 text-6xl sm:text-8xl leading-none text-[#E68836]">5</span>
+        <div class="flex items-center gap-4">
+          <span class="font-heading bigezo-gradient-text shrink-0 text-6xl font-bold leading-none sm:text-8xl">
+            5
+          </span>
           <bigezo-section-heading
             scriptTitle="Easy Steps"
             headingTitle="Structured Engagement Process"
-            tone="light"
+            tone="dark"
           />
         </div>
 
-        <ol class="space-y-4 border-l-4 border-[#45260B] pl-6">
+        <ol class="space-y-4 border-l-2 border-white/15 pl-5 sm:pl-6">
           @for (step of steps; track step.stepNumber) {
             <li class="flex items-center gap-4">
               <span
-                class="font-heading flex h-9 w-9 shrink-0 items-center justify-center bg-[#45260B] text-xl text-[#E68836]"
+                class="font-mono-tech flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#E48735]/15 text-sm font-bold text-[#FFA954]"
               >
                 {{ step.stepNumber }}
               </span>
-              <span class="font-body text-lg font-medium text-black">
+              <span class="font-body text-base font-medium text-[#F3F5F8] sm:text-lg">
                 {{ step.title }}
               </span>
             </li>
           }
         </ol>
 
-        <div class="border-2 border-[#45260B] bg-[#45260B] p-6 sm:p-8 text-white">
-          <p class="font-heading text-lg tracking-widest text-white/80 uppercase">
-            Project Investment
+        <div class="bigezo-glass-card p-6 text-white sm:p-8">
+          <p class="font-mono-tech text-xs font-semibold tracking-[0.12em] text-[#FFA954] uppercase">
+            // Project Investment
           </p>
-          <p class="font-heading mt-1 text-4xl sm:text-5xl tracking-wide text-[#E68836]">
+          <p class="font-heading bigezo-gradient-text mt-2 text-3xl font-bold tracking-tight sm:text-5xl">
             UGX 5M – 50M+
           </p>
-          <p class="font-body mt-2 text-sm sm:text-base text-white/90">
+          <p class="font-body mt-2.5 text-sm leading-relaxed text-[#D4DEEC] sm:text-base">
             Price Depends on Scope and Complexity. Final quotation is issued after technical
             assessment and scope definition.
           </p>
 
           <div
-            class="mt-6 flex flex-wrap items-center gap-6 border-t border-white/15 pt-5 font-heading text-xl tracking-wider text-[#E68836] uppercase"
+            class="mt-6 flex flex-wrap items-center gap-5 border-t border-white/10 pt-5 font-body text-sm font-semibold text-white sm:text-base"
           >
-            <span class="flex items-center gap-2">
-              <i class="fa-solid fa-mobile-screen-button text-base" aria-hidden="true"></i>
+            <span class="inline-flex items-center gap-2.5">
+              <i class="fa-solid fa-mobile-screen-button text-[#F69139]" aria-hidden="true"></i>
               Advanced Mobile Apps
             </span>
-            <span class="flex items-center gap-2">
-              <i class="fa-solid fa-desktop text-base" aria-hidden="true"></i>
+            <span class="inline-flex items-center gap-2.5">
+              <i class="fa-solid fa-desktop text-[#F69139]" aria-hidden="true"></i>
               Advanced Websites
             </span>
           </div>
@@ -54,7 +56,7 @@
       </div>
 
       <div class="min-w-0 lg:col-span-6">
-        <div class="border-2 border-[#45260B]/15 bg-white p-3">
+        <div class="bigezo-glass-card overflow-hidden p-3 sm:p-4">
           <picture>
             <source srcset="images/cloud-architecture-network.webp" type="image/webp" />
             <img
@@ -64,7 +66,7 @@
               height="800"
               loading="lazy"
               decoding="async"
-              class="h-auto w-full object-contain"
+              class="h-auto w-full rounded-xl object-contain"
             />
           </picture>
         </div>

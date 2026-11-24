@@ -1,35 +1,23 @@
 <div
-  class="min-w-0 space-y-2"
+  class="min-w-0 space-y-2.5"
   [class.text-center]="align() === 'center'"
   [class.mx-auto]="align() === 'center'"
   [class.max-w-3xl]="align() === 'center'"
 >
   @if (headingTitle()) {
-    <p
-      class="font-heading break-words text-sm sm:text-base uppercase tracking-[0.18em] font-normal"
-      [class.text-[#E68836]]="tone() === 'dark'"
-      [class.text-[#45260B]]="tone() === 'light'"
-    >
-      {{ headingTitle() }}
+    <p class="font-mono-tech break-words text-xs sm:text-sm uppercase tracking-[0.14em] font-medium text-[#FFA954]">
+      // {{ headingTitle() }}
     </p>
   }
 
   @if (scriptTitle()) {
-    <h2
-      class="font-script break-words text-4xl sm:text-5xl md:text-6xl leading-[1.05] font-normal"
-      [class.text-[#E68836]]="tone() === 'dark'"
-      [class.text-[#45260B]]="tone() === 'light'"
-    >
+    <h2 class="font-heading break-words text-3xl sm:text-4xl md:text-5xl leading-[1.1] font-bold tracking-tight text-white">
       {{ scriptTitle() }}
     </h2>
   }
 
   @if (subtitle()) {
-    <p
-      class="font-body text-base sm:text-lg leading-relaxed pt-2"
-      [class.text-white/90]="tone() === 'dark'"
-      [class.text-black/80]="tone() === 'light'"
-    >
+    <p class="font-body text-base sm:text-lg leading-relaxed pt-1.5 text-[#D4DEEC]">
       {{ subtitle() }}
     </p>
   }

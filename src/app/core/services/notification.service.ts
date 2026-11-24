@@ -7,10 +7,10 @@ import { ContactInquiryPayload, ContactSubmissionResult, ProductItem } from '../
 })
 export class NotificationService {
   private readonly baseSwalOptions = {
-    background: '#FFFFFF',
-    color: '#000000',
-    confirmButtonColor: '#E68836',
-    cancelButtonColor: '#45260B',
+    background: '#0F1622',
+    color: '#F3F5F8',
+    confirmButtonColor: '#E48735',
+    cancelButtonColor: '#1E293B',
     customClass: {
       popup: 'bigezo-swal-popup',
       title: 'bigezo-swal-title',
@@ -56,8 +56,8 @@ export class NotificationService {
       iconColor: '#E68836',
       title: 'Project Inquiry Received',
       html: `
-        <p class="text-sm text-black mb-2">${this.escapeHtml(result.message)}</p>
-        <p class="text-xs font-semibold uppercase tracking-wider text-[#45260B]">Reference: ${this.escapeHtml(result.referenceCode)}</p>
+        <p class="text-sm text-[#D4DEEC] mb-2">${this.escapeHtml(result.message)}</p>
+        <p class="text-xs font-semibold uppercase tracking-wider text-[#FFA954]">Reference: ${this.escapeHtml(result.referenceCode)}</p>
       `,
       confirmButtonText: 'Done',
     });
@@ -95,14 +95,14 @@ export class NotificationService {
       iconColor: '#E68836',
       title: 'Inquiry Prepared — Choose Direct Channel',
       html: `
-        <div class="text-left space-y-3 text-sm text-black">
+        <div class="text-left space-y-3 text-sm text-[#D4DEEC]">
           <p>${this.escapeHtml(result.message)}</p>
-          <div class="border border-[#45260B]/20 bg-[#45260B]/5 p-3">
-            <p class="text-xs font-semibold uppercase tracking-wider text-[#45260B]">Prepared Brief (${this.escapeHtml(result.referenceCode)})</p>
-            <p class="mt-1 font-medium">${this.escapeHtml(payload.fullName)}${payload.organization ? ' — ' + this.escapeHtml(payload.organization) : ''}</p>
-            <p class="text-xs text-black/80">${this.escapeHtml(payload.serviceCategory)}</p>
+          <div class="rounded-xl border border-white/15 bg-white/5 p-3">
+            <p class="text-xs font-semibold uppercase tracking-wider text-[#FFA954]">Prepared Brief (${this.escapeHtml(result.referenceCode)})</p>
+            <p class="mt-1 font-medium text-white">${this.escapeHtml(payload.fullName)}${payload.organization ? ' — ' + this.escapeHtml(payload.organization) : ''}</p>
+            <p class="text-xs text-[#A6B4C8]">${this.escapeHtml(payload.serviceCategory)}</p>
           </div>
-          <p class="text-xs text-black/80">Send this brief immediately to our leadership via WhatsApp or Email:</p>
+          <p class="text-xs text-[#A6B4C8]">Send this brief immediately to our leadership via WhatsApp or Email:</p>
         </div>
       `,
       showCancelButton: true,
@@ -110,7 +110,7 @@ export class NotificationService {
       confirmButtonText: 'Send via WhatsApp',
       denyButtonText: 'Send via Email',
       cancelButtonText: 'Close',
-      denyButtonColor: '#45260B',
+      denyButtonColor: '#1E293B',
     });
 
     if (modalResult.isConfirmed) {
@@ -129,21 +129,21 @@ export class NotificationService {
       title: product.name,
       html: `
         <div class="text-center space-y-3 py-2">
-          <div class="mx-auto flex h-16 w-16 items-center justify-center bg-[#45260B] text-[#E68836] text-3xl">
+          <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-[#E48735]/15 text-[#FFA954] text-3xl">
             <i class="${this.escapeHtml(product.iconClass)}" aria-hidden="true"></i>
           </div>
-          <p class="text-xs uppercase tracking-widest font-semibold text-[#45260B]">${this.escapeHtml(product.category)}</p>
+          <p class="text-xs uppercase tracking-widest font-semibold text-[#FFA954]">${this.escapeHtml(product.category)}</p>
           ${
             hasPublicUrl
-              ? `<p class="text-sm text-black">Verified product portal: <span class="font-semibold text-[#45260B]">${this.escapeHtml(product.displayUrl ?? product.url ?? '')}</span></p>`
-              : `<p class="text-sm text-black">Enterprise solution built by Bigezo Technologies. Contact us for a live technical demonstration.</p>`
+              ? `<p class="text-sm text-[#D4DEEC]">Verified product portal: <span class="font-semibold text-white">${this.escapeHtml(product.displayUrl ?? product.url ?? '')}</span></p>`
+              : `<p class="text-sm text-[#D4DEEC]">Enterprise solution built by Bigezo Technologies. Contact us for a live technical demonstration.</p>`
           }
         </div>
       `,
       showCancelButton: true,
       confirmButtonText: hasPublicUrl ? 'Visit Product' : 'Request Technical Demo',
       cancelButtonText: hasPublicUrl ? 'Discuss Similar Build' : 'Close',
-      cancelButtonColor: '#45260B',
+      cancelButtonColor: '#1E293B',
     });
 
     if (modalResult.isConfirmed) {
