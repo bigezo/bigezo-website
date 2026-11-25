@@ -6,25 +6,20 @@
           <span class="font-heading bigezo-gradient-text shrink-0 text-6xl font-bold leading-none sm:text-8xl">
             5
           </span>
-          <bigezo-section-heading
-            scriptTitle="Easy Steps"
-            headingTitle="Structured Engagement Process"
-            tone="dark"
-          />
+          <bigezo-section-heading scriptTitle="Easy Steps" headingTitle="Structured Engagement Process" tone="dark" />
         </div>
 
         <ol class="space-y-4 border-l-2 border-white/15 pl-5 sm:pl-6">
           @for (step of steps; track step.stepNumber) {
-            <li class="flex items-center gap-4">
-              <span
-                class="font-mono-tech flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#E48735]/15 text-sm font-bold text-[#FFA954]"
-              >
-                {{ step.stepNumber }}
-              </span>
-              <span class="font-body text-base font-medium text-[#F3F5F8] sm:text-lg">
-                {{ step.title }}
-              </span>
-            </li>
+          <li class="flex items-center gap-4">
+            <span
+              class="font-mono-tech flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#E48735]/15 text-sm font-bold text-[#FFA954]">
+              {{ step.stepNumber }}
+            </span>
+            <span class="font-body text-base font-medium text-[#F3F5F8] sm:text-lg">
+              {{ step.title }}
+            </span>
+          </li>
           }
         </ol>
 
@@ -33,7 +28,7 @@
             // Project Investment
           </p>
           <p class="font-heading bigezo-gradient-text mt-2 text-3xl font-bold tracking-tight sm:text-5xl">
-            UGX 5M – 50M+
+            UGX 5M+
           </p>
           <p class="font-body mt-2.5 text-sm leading-relaxed text-[#D4DEEC] sm:text-base">
             Price Depends on Scope and Complexity. Final quotation is issued after technical
@@ -41,8 +36,7 @@
           </p>
 
           <div
-            class="mt-6 flex flex-wrap items-center gap-5 border-t border-white/10 pt-5 font-body text-sm font-semibold text-white sm:text-base"
-          >
+            class="mt-6 flex flex-wrap items-center gap-5 border-t border-white/10 pt-5 font-body text-sm font-semibold text-white sm:text-base">
             <span class="inline-flex items-center gap-2.5">
               <i class="fa-solid fa-mobile-screen-button text-[#F69139]" aria-hidden="true"></i>
               Advanced Mobile Apps
@@ -59,15 +53,9 @@
         <div class="bigezo-glass-card overflow-hidden p-3 sm:p-4">
           <picture>
             <source srcset="images/cloud-architecture-network.webp" type="image/webp" />
-            <img
-              src="images/cloud-architecture-network.jpg"
-              alt="Bigezo Technologies scalable cloud, API, and database architecture"
-              width="1200"
-              height="800"
-              loading="lazy"
-              decoding="async"
-              class="h-auto w-full rounded-xl object-contain"
-            />
+            <img src="images/cloud-architecture-network.jpg"
+              alt="Bigezo Technologies scalable cloud, API, and database architecture" width="1200" height="800"
+              loading="lazy" decoding="async" class="h-auto w-full rounded-xl object-contain" />
           </picture>
         </div>
       </div>
